@@ -1,4 +1,4 @@
-name: New3DS OEM Hunter
+name: eBay Hunter
 
 on:
   schedule:
@@ -6,25 +6,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  search:
+  run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Configurar Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Instalar dependencias
-        run: |
-          pip install requests beautifulsoup4
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Ejecutar bot
+      - name: Run hunter
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: |
-          python .github/workflows/hunter.py
+        run: python .github/workflows/hunter.py
