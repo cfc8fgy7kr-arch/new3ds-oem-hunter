@@ -27,4 +27,4 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
-          python hunter.py
+          python .github/workflows/hunter.py
