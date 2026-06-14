@@ -1,3 +1,5 @@
+send_telegram("🧪 TEST: el bot está funcionando")
+
 import requests
 import json
 import time
