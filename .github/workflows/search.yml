@@ -18,14 +18,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Debug files
-        run: ls -la
-
       - name: Install dependencies
-        run: pip install -r ${{ github.workspace }}/requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run hunter
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: python .github/workflows/hunter.py
+        run: python hunter.py
