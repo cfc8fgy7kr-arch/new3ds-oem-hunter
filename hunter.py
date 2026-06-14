@@ -1,5 +1,3 @@
-send_telegram("🧪 TEST: el bot está funcionando")
-
 import requests
 import json
 import time
@@ -76,6 +74,7 @@ def search_ebay(query, url):
 
 
 def main():
+    send_telegram("🧪 TEST: el bot está funcionando")
     seen = load_seen()
 
     for country, url in COUNTRIES.items():
