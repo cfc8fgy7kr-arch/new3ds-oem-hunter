@@ -49,6 +49,9 @@ def is_good(text):
 
 def search_ebay(query, url):
     r = requests.get(url, params={"_nkw": query}, headers={"User-Agent": "Mozilla/5.0"})
+
+    print(r.text[:500])
+    
     soup = BeautifulSoup(r.text, "html.parser")
 
     items = soup.select(".s-item")
